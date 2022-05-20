@@ -1,7 +1,7 @@
 # DX-Ball Tiva-C
 
 <h1 align="center">
-  <img src="img/ball.gif" width="150px" />
+  <img src="img/ball.gif" width="300px" hieght="300px" />
 </h1>
 
 
@@ -27,8 +27,8 @@ Arm Cortex-M4F
 Programmable timers can be used to count or time external events that drive the Timer input pins. The TM4C123GH6PM General-Purpose Timer Module (GPTM) contains six 16/32-bit GPTM blocks and six 32/64-bit Wide GPTM blocks.
 
 Memory. 256 kb Flash memory. 32 kb single-cycle SRAM with internal ROM loaded with TivaWare software.
-![alt text](img/download.png)
-![alt text](img/img.png)
+![alt text](img/download.jpg)
+![alt text](img/img1.png)
 
  
 ## Initialization of an I/O port
@@ -124,9 +124,7 @@ void Timer2A_Handler(void){
 	timerflag = 0;
 }
 ````
-#
-#
-#
+
 ----
 #
 # DX-BALL
@@ -190,10 +188,15 @@ for thier support during this courses
 
 ## Output
 ![alt text](img/dx.png)
+----
 ![alt text](img/sw1.png)
+----
 ![alt text](img/startgame.png)
+----
 ![alt text](img/gameover.png)
+----
 ![alt text](img/win.png)
+----
 
 
 
@@ -210,7 +213,7 @@ for thier support during this courses
 
 ## Youtube Vedio
 [![](img/youtube.png)](https://www.youtube.com/watch?v=rZmfAq6zxSI)
-[Watch the video](https://www.youtube.com/watch?v=rZmfAq6zxSI)
+#### [Watch the video](https://www.youtube.com/watch?v=rZmfAq6zxSI)
 
 
 

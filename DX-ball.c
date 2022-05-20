@@ -22,8 +22,129 @@ void EnableInterrupts(void);  // Enable interrupts
 void Delay100ms(unsigned long count); // time delay in 0.1 seconds
 
 
+while(1){
+	if(tx >= 0 && ty >= 0 && tx < 21 && ty < (5+level) && foodArr[tx][ty]){
+		ballXcord += xval;
+		ballYcord += yval;
+		if(xval > 0 && yval < 0){// ball is moving up right
+			if(foodArr[tx][ty + 1] && foodArr[tx - 1][ty]){ // there is  food down and left of target food
+				if(ballXcord>=79){
+				yval = -yval;//the ball will move down
+				}else{
+				xval = -xval;//the ball will move left
+				yval = -yval;//the ball will move down
+				}
+			}else if(foodArr[tx - 1][ty]){// there is food left of target food
+				yval = -yval;//the ball will move down right
+			}else{//there is no food down or left of target food
+				xval = -xval;//the ball will move up left
+			}
+		}else if(xval < 0 && yval < 0){// ball is moving up left
+			if(foodArr[tx + 1][ty] && foodArr[tx][ty + 1]){// there is  food down and right of target food
+				if(ballXcord<=0){
+				yval = -yval;//the ball will move down
+				}else{
+				xval = -xval;//the ball will move right
+				yval = -yval;//the ball will move down
+				}
+			}else if(foodArr[tx + 1][ty]){// there is food right of target food
+				yval = -yval;//the ball will move down left
+			}else{// there is no food down or right of target food
+				xval = -xval;//the ball will move up right
+			}
+		}else if(xval < 0 && yval > 0){//the ball is moving left down
+			if(foodArr[tx + 1][ty] && foodArr[tx][ty - 1]){// there is  food above and right of target food
+				if(ballXcord<=0){
+					yval = -yval;//the ball will move up
+				}else{
+				xval = -xval;//the ball will move right
+				yval = -yval;//the ball will move up
+				}}else if(foodArr[tx + 1][ty]){// there is food right of target food
+				yval = -yval;//the ball will move up left
+			}else{// there is no food above or right of target food
+				xval = -xval;//the ball will move down right
+			}
+		}else{//the ball is moving down right
+			if(foodArr[tx - 1][ty] && foodArr[tx][ty - 1]){// there is  food above and left of target food
+				if(ballXcord>=79){
+				yval = -yval;//the ball will move up
+				}else{
+				xval = -xval;//the ball will move left
+				yval = -yval;//the ball will move up
+			}}else if(foodArr[tx - 1][ty]){// there is food left of target food
+				yval = -yval;//the ball will move up right
+			}else{// there is no food above or left of target food
+				xval = -xval;//the ball will move down left
+			}
+		}
+		foodArr[tx][ty] = 0;
+		score+=10*level;
+		++fe;
+
+		if(fe==63+(21*level)){	
+			Nokia5110_Clear();
+			Nokia5110_SetCursor(1, 1);
+			Nokia5110_OutString("YOU HAVE");
+			Nokia5110_SetCursor(1, 2);
+			Nokia5110_OutString("PASSED level");
+			Nokia5110_SetCursor(1, 3);
+			Nokia5110_OutUDec(level);
+			Nokia5110_SetCursor(1, 4);
+			Nokia5110_OutString(" SCORE");
+			Nokia5110_SetCursor(1, 5);
+			Nokia5110_OutUDec(score);
+			Delay100ms(40);
+			++level;
+			if(level>3){
+				WinGame();
+				//return 0;
+			}
+			ballXcord=36;
+			ballYcord=36;
+			xval=4;
+			yval=-4;
+
+			fe=0;
+
+			Nokia5110_Clear();
+			Nokia5110_SetCursor(1, 2);
+			Nokia5110_OutString("  Level  ");	
+			Nokia5110_SetCursor(1, 4);
+			Nokia5110_OutUDec(level);
+			Nokia5110_SetCursor(0, 0); // renders screen
+			Delay100ms(20);
+			display(level);
+		}
 
 
+
+	}else{
+		if(ballXcord <=0 || ballXcord >= 79){//the ball is out of range of the screen left or right 
+			xval = -xval;//the ball will reverse its direction 
+		}
+		if(ballYcord <= 4){//the ball is moving up and  exceeded the foods 
+			yval = -yval;//the ball will go down 
+
+		}
+		if(ballYcord >= 47){//the player ship missed the ball 
+			--lifes;
+
+			if(lifes==0){
+			   EndGame();
+			    //return 0;
+			}
+			ballXcord=36;
+			ballYcord=36;
+			xval=4;
+			yval=-4;
+
+		}
+		Delay100ms((40-(level*10)));
+
+		ballXcord += xval;
+		ballYcord += yval;
+	}
+}
 
 // *************************** Capture image dimensions out of BMP**********
 

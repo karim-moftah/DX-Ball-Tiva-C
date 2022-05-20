@@ -177,15 +177,6 @@ Switch 1 for moving the slider to the right
 Switch 2 for moving the slider to the left
 ````
 
-## Support
-
-`Thanks to` 
-- `Eng. Ahmed Bakr`
-- `Eng. Mahmoud Nawar`
-- `Dr. Ahmed Fares`
-
-for thier support during this courses 
-
 ## Output
 ![alt text](img/dx.png)
 ----
@@ -199,6 +190,21 @@ for thier support during this courses
 ----
 
 
+## Youtube Vedio
+
+#### [Watch the video]
+
+
+
+## Support
+
+`Thanks to` 
+- `Eng. Ahmed Bakr`
+- `Eng. Mahmoud Nawar`
+- `Dr. Ahmed Fares`
+
+for thier support during this courses 
+
 
 
 ## Project Contributers:
@@ -210,10 +216,6 @@ for thier support during this courses
 | 4| `Mohammed Ahmed Ibrahim` |[mohamedmahfouz3]
 | 5 |`Ammar Adel` |[ammaradel17]|
 | 6 |`Abdalla Hamdy` |[Abdullahh74 ]
-
-## Youtube Vedio
-[![](img/youtube.png)](https://www.youtube.com/watch?v=rZmfAq6zxSI)
-#### [Watch the video]
 
 
 

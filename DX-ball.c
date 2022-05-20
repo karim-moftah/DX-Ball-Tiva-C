@@ -115,6 +115,33 @@ void Delay100ms(unsigned long count); // time delay in 0.1 seconds
 
 
 while(1){
+		if(by >= 43 && bx >= px && bx < px + 20){//the player ship hit the ball 
+			temp = bx - px;
+			if(temp < 8){//the ball hit the left of the player ship
+				xval = -4;//the ball will go left 
+			}else if(temp < 12 ){//the ball hit the center of the player ship
+				xval = 0;//the ball will not change its direction
+			}else{//the ball hit the right of the player ship 
+				xval = 4;// the ball will go right
+			}
+			yval = -4;//anyway the ball will move up
+		}
+		Nokia5110_PrintBMP(bx, by, space, 0);
+		
+		tx = (bx + xval)/4;
+		ty = (by + yval)/4;
+		if(by <= 4&&bx>=80){//the ball is moving up and  exceeded the foods 
+				ty=2;
+			}else if(by <= 4&&bx<=0){
+			ty=2;
+			}else if(by<=4){
+			ty=2;
+				yval=-yval;
+			};
+			if(by==0){
+			by=4;
+			}
+	
 	if(tx >= 0 && ty >= 0 && tx < 21 && ty < (5+level) && foodArr[tx][ty]){
 		ballXcord += xval;
 		ballYcord += yval;

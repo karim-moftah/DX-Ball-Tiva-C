@@ -1,7 +1,7 @@
 # DX-Ball Tiva-C
 
 <h1 align="center">
-  <img src="img/ball.gif" width="300px" hieght="300px" />
+  <img src="img/ball.gif" width="400px" hieght="400px" />
 </h1>
 
 
@@ -213,7 +213,7 @@ for thier support during this courses
 
 ## Youtube Vedio
 [![](img/youtube.png)](https://www.youtube.com/watch?v=rZmfAq6zxSI)
-#### [Watch the video](https://www.youtube.com/watch?v=rZmfAq6zxSI)
+#### [Watch the video]
 
 
 
@@ -229,4 +229,4 @@ TM4C123GH6PM  Microcontroller Data sheet
    [ammaradel17]: <https://github.com/ammaradel17>
    [mohamedmahfouz3]: <https://github.com/mohamedmahfouz3>
    [Abdullahh74 ]: <https://github.com/Abdullahh74>
-
+   [Watch the video]:<https://www.youtube.com/watch?v=rZmfAq6zxSI>
